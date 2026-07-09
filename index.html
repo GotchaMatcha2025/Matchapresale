@@ -14,7 +14,7 @@
    GOTCHA MATCHA — early access presale
    Neutrals from the tin (paper, steel, marker ink), one green.
    Lilac appears only where the blind box lives.
-   Display face = the founder's handwriting. It has NO DIGITS1,
+   Display face = the founder's handwriting. It has NO DIGITS,
    so numbers never get .hand — they sit in DM Sans / DM Mono.
    ============================================================ */
 @font-face{
@@ -47,6 +47,9 @@ body{
   font-variant-numeric:tabular-nums;
 }
 img{max-width:100%;display:block}
+/* Must outrank `img{display:block}` and `.qrbox img{display:block}`, or the
+   [hidden] attribute silently does nothing and hidden images render anyway. */
+[hidden]{display:none!important}
 button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
 :focus-visible{outline:2px solid var(--matcha);outline-offset:3px;border-radius:4px}
 
