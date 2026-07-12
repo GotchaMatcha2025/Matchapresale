@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="theme-color" content="#FBFBF9" />
 <title>Gotcha Matcha — Early Access Presale</title>
-<meta name="description" content="Early access presale for our signature house blend matcha. Ships mid-August." />
+<meta name="description" content="Pre-order our Signature House Blend — the exact matcha powder we use in stores. Early access sale, limited quantity." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
@@ -30,9 +30,9 @@
   --graphite:#2A2C28;
   --graphite-60:#6E7069;
   --graphite-40:#9A9C95;
-  --matcha:#5B6B45;
-  --matcha-hi:#6B7C52;
-  --matcha-05:rgba(91,107,69,.07);
+  --matcha:#074012;
+  --matcha-hi:#2A5B33;
+  --matcha-05:rgba(7,64,18,.07);
   --lilac-50:#F3EFF9;
   --lilac-200:#DED4EC;
   --lilac-ink:#6B5A8C;
@@ -111,6 +111,8 @@ button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparen
 }
 .hero h1{margin:26px 0 0;font-size:clamp(58px,17vw,132px);letter-spacing:.01em}
 .hero h1 .g{color:var(--matcha)}
+.hero .eyebrow{max-width:22ch;line-height:1.8}
+@media (min-width:600px){ .hero .eyebrow{max-width:none} }
 .hero .sub{margin:20px auto 30px;max-width:32ch;font-size:16.5px;color:var(--graphite-60)}
 .hero .note{margin-top:14px;font-size:12.5px;color:var(--graphite-40)}
 .hero-foot{border-top:1px solid var(--steel-100);padding:16px 0 calc(16px + var(--safe-b));
@@ -133,12 +135,23 @@ button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparen
 .shot img{max-height:250px;width:auto;object-fit:contain}
 
 .pbody{display:flex;flex-direction:column}
-.pbody h3{margin:7px 0 0;font-size:22px;font-weight:700;letter-spacing:-.01em}
-.pbody .desc{margin:8px 0 0;font-size:14.5px;color:var(--graphite-60)}
-@media (min-width:700px){ .pbody h3{font-size:24px} }
+.pbody h3{margin:6px 0 0;font-size:34px;font-weight:400;letter-spacing:0;line-height:1;color:var(--graphite)}
+.pbody .desc{margin:10px 0 0;font-size:14.5px;color:var(--graphite-60)}
+@media (min-width:700px){ .pbody h3{font-size:38px} }
 
-.meta{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12.5px;color:var(--graphite-40);margin-top:12px}
-.meta b{color:var(--graphite);font-weight:500}
+.details{margin-top:14px;border-top:1px solid var(--steel-100);border-bottom:1px solid var(--steel-100)}
+.details summary{list-style:none;cursor:pointer;padding:12px 0;font-size:12px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--graphite);
+  display:flex;align-items:center;justify-content:space-between}
+.details summary::-webkit-details-marker{display:none}
+.details .chev{font-size:16px;color:var(--graphite-40);transition:transform .2s ease}
+.details[open] .chev{transform:rotate(180deg)}
+.dbody{padding:2px 0 16px}
+.drow{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:7px 0;font-size:13px;align-items:start}
+.drow .dk{color:var(--graphite-40);font-weight:500}
+.drow .dv{color:var(--graphite);line-height:1.5}
+@media (max-width:440px){ .drow{grid-template-columns:1fr;gap:2px} .drow .dk{font-size:11px;letter-spacing:.06em;text-transform:uppercase} }
+
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
 .tag{font-size:11px;color:var(--graphite-60);border:1px solid var(--steel-200);
   border-radius:100px;padding:4px 11px}
@@ -172,10 +185,17 @@ button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparen
 @media (min-width:700px){ .addon{grid-template-columns:200px 1fr;gap:26px;padding:22px} }
 .addon.locked{opacity:.55}
 .addon .shot img{max-height:230px}
+.shot.cover{padding:0;overflow:hidden;border-radius:14px}
+.shot.cover img{width:100%;height:100%;max-height:none;object-fit:cover}
+.shot.noimg{background:var(--lilac-50);border:1px dashed var(--lilac-200);border-radius:14px;
+  min-height:200px;position:relative}
+.shot.noimg::after{content:attr(data-label) " · photo soon";position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
+  font-size:12px;letter-spacing:.06em;color:var(--lilac-ink)}
 .badge{display:inline-flex;align-items:center;font-size:10px;font-weight:500;letter-spacing:.18em;
   text-transform:uppercase;color:var(--lilac-ink);background:#fff;border:1px solid var(--lilac-200);
   border-radius:100px;padding:5px 11px;width:max-content}
-.addon h3{margin:10px 0 0;font-size:21px;font-weight:700}
+.addon h3{margin:8px 0 0;font-size:32px;font-weight:400;letter-spacing:0;line-height:1;color:var(--graphite)}
 .addon .desc{margin:8px 0 0;font-size:14px;color:var(--graphite-60)}
 .addon .pfoot{border-top-color:var(--lilac-200)}
 .addon .stepper{border-color:var(--lilac-200);background:#fff}
@@ -200,6 +220,21 @@ button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparen
   padding:10px 0;border-bottom:1px solid var(--steel-100)}
 .oline .q{color:var(--graphite-40)}
 .ototal{display:flex;justify-content:space-between;padding-top:14px;font-size:19px;font-weight:500}
+
+.voucher{margin-top:18px;padding-top:16px;border-top:1px solid var(--steel-100)}
+.voucher label{display:block;font-size:11px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--graphite-40);margin-bottom:6px}
+.voucher-row{position:relative}
+.voucher-row input{width:100%;min-height:50px;border:1px solid var(--steel-200);border-radius:12px;
+  padding:14px;font-family:inherit;font-size:16px;background:#fff;color:var(--graphite);
+  letter-spacing:.04em;text-transform:lowercase}
+.voucher-row input:focus{outline:none;border-color:var(--matcha);box-shadow:0 0 0 3px var(--matcha-05)}
+.voucher-row.ok input{border-color:var(--matcha)}
+.vmark{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--matcha);
+  font-weight:700;font-size:18px}
+.vmsg{margin:8px 0 0;font-size:13px;font-weight:500;line-height:1.45}
+.vmsg.ok{color:var(--matcha)}
+.vmsg.no{color:var(--graphite-40)}
 
 .field{margin-bottom:12px}
 .field label{display:block;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
@@ -258,6 +293,21 @@ button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparen
 .next li{position:relative;padding-left:22px;margin:10px 0;font-size:14px;color:var(--graphite-60)}
 .next li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--matcha)}
 
+.redeembox{background:var(--matcha);border-radius:14px;padding:18px;margin:16px 0;text-align:center}
+.redeembox .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,251,249,.7)}
+.redeembox .r{font-family:'DM Mono',monospace;font-size:24px;font-weight:500;color:#fff;
+  letter-spacing:.08em;margin-top:6px}
+.redeembox p{color:rgba(251,251,249,.82);font-size:12.5px;margin:10px 0 0}
+
+.modal{position:fixed;inset:0;z-index:100;background:rgba(18,20,16,.5);
+  display:flex;align-items:center;justify-content:center;padding:22px}
+@media (prefers-reduced-motion:no-preference){ .modal{animation:mfade .25s ease both} }
+@keyframes mfade{from{opacity:0}to{opacity:1}}
+.modal-card{background:var(--paper);border-radius:20px;padding:30px 24px;max-width:380px;
+  width:100%;text-align:center;box-shadow:0 24px 60px rgba(18,20,16,.28)}
+.modal-card h3{margin:0 0 12px;font-size:34px;color:var(--graphite)}
+.modal-card p{margin:0 0 22px;color:var(--graphite-60);font-size:15px}
+
 .spin{width:17px;height:17px;border:2.5px solid rgba(255,255,255,.45);border-top-color:#fff;
   border-radius:50%;animation:sp .7s linear infinite;display:inline-block}
 @keyframes sp{to{transform:rotate(360deg)}}
@@ -271,12 +321,12 @@ footer.site{border-top:1px solid var(--steel-100);padding:22px 0 calc(22px + var
 <section id="s-landing" class="screen is-active">
   <div class="vfill">
     <div class="hero">
-      <span class="eyebrow">Early access presale</span>
+      <span class="eyebrow">Early access sale &nbsp;|&nbsp; Pre-order &nbsp;|&nbsp; Limited quantity</span>
       <img class="hero-tin" src="tin-house.webp" alt="Gotcha Matcha signature house blend tin">
       <h1 class="hand">hey, we <span class="g">gotcha.</span></h1>
-      <p class="sub">Our signature house blend, going out first to the people who show up. Reserve a tin before it reaches the counter.</p>
+      <p class="sub">Pre-order our Signature House Blend — the exact matcha powder we use in stores. Our next drop is 2–3 months away, so reserve a tin quick.</p>
       <button class="btn btn-primary" onclick="go('shop')">Get early access <span class="arw">→</span></button>
-      <p class="note">Ships mid-August · delivery $4.99</p>
+      <p class="note">Delivery $4.99 · reserve now, pay by PayNow</p>
     </div>
     <div class="hero-foot">Gotcha Matcha · Singapore</div>
   </div>
@@ -292,8 +342,8 @@ footer.site{border-top:1px solid var(--steel-100);padding:22px 0 calc(22px + var
     </div>
     <div class="head">
       <span class="eyebrow">The presale</span>
-      <h2 class="hand">the house blend.</h2>
-      <p>Everything here is a preorder — we ship mid-August.</p>
+      <h2 class="hand">reserve your tin.</h2>
+      <p>Everything here is a pre-order — your order will be in your hands mid-August.</p>
     </div>
 
     <div id="grid"></div>
@@ -329,6 +379,16 @@ footer.site{border-top:1px solid var(--steel-100);padding:22px 0 calc(22px + var
           <div id="sum-lines"></div>
           <div class="oline"><span>Delivery</span><span id="sum-del"></span></div>
           <div class="ototal"><span>Total</span><span id="sum-tot"></span></div>
+
+          <div class="voucher" id="voucher">
+            <label for="f-voucher">Have a code?</label>
+            <div class="voucher-row">
+              <input id="f-voucher" type="text" autocomplete="off" autocapitalize="off"
+                     spellcheck="false" placeholder="Enter code" oninput="checkVoucher()">
+              <span class="vmark" id="vmark" hidden aria-hidden="true">✓</span>
+            </div>
+            <p class="vmsg" id="vmsg" hidden></p>
+          </div>
         </div>
 
         <div class="block">
@@ -404,6 +464,11 @@ footer.site{border-top:1px solid var(--steel-100);padding:22px 0 calc(22px + var
       <h2 class="hand">you're in.</h2>
       <p>Thanks for jumping on early. We've got your preorder and we'll check your payment shortly.</p>
       <div class="refbox"><div class="k">Order reference</div><div class="r" id="done-ref">—</div></div>
+      <div class="redeembox" id="done-redeem" hidden>
+        <div class="k">🍵 Your free-drink code</div>
+        <div class="r" id="done-redeem-code">—</div>
+        <p>Show this at the Woodleigh kiosk to claim your free drink. It's in your email too.</p>
+      </div>
       <ul class="next">
         <li>Confirmation emailed to <b id="done-email">you</b></li>
         <li>We check your payment screenshot, usually same day</li>
@@ -413,6 +478,16 @@ footer.site{border-top:1px solid var(--steel-100);padding:22px 0 calc(22px + var
     <div class="hero-foot">Gotcha Matcha · Singapore</div>
   </div>
 </section>
+
+<!-- voucher sold-out popup -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-card">
+    <h3 class="hand" id="modal-title">aw, just missed it</h3>
+    <p id="modal-body"></p>
+    <div class="redeembox" id="modal-code" hidden></div>
+    <button class="btn btn-primary btn-block" onclick="closeModal()">Got it</button>
+  </div>
+</div>
 
 <footer class="site">Gotcha Matcha · Early access presale</footer>
 
@@ -430,7 +505,15 @@ const CONFIG = {
 
   QR_MODE: "dynamic",          // "dynamic" = amount + reference baked into each QR
   DELIVERY_FEE: 4.99,
-  SHIP_NOTE: "Early access presale — this is a prelaunch order, actual shipment mid-August",
+  SHIP_NOTE: "Early access pre-launch sale — you're making a pre-order. Your order will be in your hands mid-August.",
+
+  // Free-drink voucher. Doesn't change the price — the first 50 who enter this
+  // code get a unique redemption code in their confirmation email, redeemable
+  // in-store. The 50-cap is enforced by the backend, not here.
+  VOUCHER: {
+    code: "wegotcha",
+    limit: 50
+  },
 
   PAYNOW: {
     proxyType: "UEN",
@@ -439,44 +522,83 @@ const CONFIG = {
     editableAmount: false
   },
 
-  /* ---- the one product ---------------------------------------------------
-     desc / origin / grade / bestFor / flavour are BLANK on purpose.
-     Anything left as "" or [] or {} simply doesn't render — no empty boxes.
-     Fill in whichever you want and they appear.
-     ⚠ PRICE BELOW IS STILL A PLACEHOLDER.
-  ------------------------------------------------------------------------- */
+  /* ---- the one product ----
+     `details` rows render inside a collapsible "Details" dropdown on the card.
+     Leave a row's value "" to hide that row. Leave `details` empty ([]) to hide
+     the whole dropdown.  bestFor / flavour still render if filled; left blank here. */
   PRODUCT: {
     id: "HOUSE",
     name: "Signature House Blend",
-    price: 28.00,                 // ← set the real price
-    weight: "40g tin",
+    price: 34.90,
+    weight: "50g",
     image: "tin-house.webp",
-    desc: "",                     // ← your copy here
-    origin: "",                   // e.g. "Uji, Japan"
-    grade: "",                    // e.g. "Ceremonial"
-    bestFor: [],                  // e.g. ["Latte","Iced","Baking"]
-    flavour: {}                   // e.g. { Umami:70, Sweetness:65, Bitterness:35, Body:78 }
+    desc: "First harvest. The exact blend we use in stores. Makes 8 cups.",
+    details: [
+      { label: "Grade",  value: "Ceremonial" },
+      { label: "Origin", value: "Uji and Kagoshimaya, Japan · Jing Shan, China" },
+      { label: "Cultivar", value: "Okumidori · Saemidori · Yabukita · Long Jing · Zhongcha" },
+      { label: "Flavour profile", value: "Gentle umami, nutty undertones, with a fragrant subtle floral and vegetal finish. Perfectly balanced to enjoy on its own or in creative drinks." }
+    ],
+    bestFor: [],
+    flavour: {}
   },
 
-  /* ---- the add-on: only orderable alongside a tin ---- */
-  ADDON: {
-    id: "BLINDBOX",
-    name: "Blind Box",
-    price: 34.90,
-    usualPrice: 39.90,            // shown struck through; set to null to hide
-    tagline: "Limited edition",
-    image: "tin-blindbox.webp",
-    desc: "An exclusive collab with moggyan, to celebrate gotcha's first birthday.",
-    lockMsg: "Add a tin first — the blind box is an add-on."
-  }
+  /* ---- add-ons: only orderable alongside a tin ----
+     Each renders in the lilac add-on zone and is gated behind having a tin.
+     Add or remove entries freely; the cart logic handles any number. */
+  ADDONS: [
+    {
+      id: "BLINDBOX",
+      name: "Blind Box",
+      price: 34.90,
+      usualPrice: 39.90,            // shown struck through; set to null to hide
+      tagline: "Limited edition",
+      image: "tin-blindbox.webp",
+      desc: "An exclusive collab with local small artist, Moggoyan, to celebrate Gotcha's first birthday. Includes a limited edition Gotcha Matcha x Moggoyan t-shirt, a drink on us, and a chance to win a one year supply of matcha powder. Free size. Oversized fit."
+    },
+    {
+      id: "COOKIEBUTTER",
+      name: "Cookie Butter PR Kit",
+      price: 14.90,
+      usualPrice: null,
+      tagline: "Add-on",
+      image: "cookiebutter.webp",
+      desc: "Bringing our top-seller, Cookie Butter Matcha, to your home. Includes our housemade cookie butter sauce and extra crumbs as add-ons to your matcha powder order. Makes 8 cups."
+    }
+  ],
+  ADDON_LOCK_MSG: "Add a tin first — these are add-ons to your matcha."
 };
 /* ============================================================ EDIT ▲ */
 
 const $ = id => document.getElementById(id);
 const fmt = n => "$" + n.toFixed(2);
-const P = CONFIG.PRODUCT, A = CONFIG.ADDON;
-const qty = { [P.id]: 0, [A.id]: 0 };
-let ORDER_REF = "", proofDataUrl = "";
+const P = CONFIG.PRODUCT, ADDONS = CONFIG.ADDONS;
+const qty = { [P.id]: 0 };
+ADDONS.forEach(a => qty[a.id] = 0);
+let ORDER_REF = "", proofDataUrl = "", voucherOK = false;
+
+function checkVoucher(){
+  const el = $('f-voucher');
+  const entered = el.value.trim().toLowerCase();
+  const row = el.closest('.voucher-row');
+  const mark = $('vmark'), msg = $('vmsg');
+  voucherOK = entered === CONFIG.VOUCHER.code.toLowerCase();
+
+  if(!entered){
+    row.classList.remove('ok'); mark.hidden = true; msg.hidden = true;
+    return;
+  }
+  if(voucherOK){
+    row.classList.add('ok'); mark.hidden = false;
+    msg.hidden = false; msg.className = 'vmsg ok';
+    msg.textContent = "Nice — if you're one of the first " + CONFIG.VOUCHER.limit +
+      ", you'll get a free-drink code in your confirmation email.";
+  }else{
+    row.classList.remove('ok'); mark.hidden = true;
+    msg.hidden = false; msg.className = 'vmsg no';
+    msg.textContent = "That code isn't valid.";
+  }
+}
 
 function fillRibbon(id){ $(id).innerHTML = `<span>${CONFIG.SHIP_NOTE}</span>`.repeat(8); }
 
@@ -487,18 +609,22 @@ function flavRows(f){
       <div class="ftrack"><div class="ffill" style="width:${v}%"></div></div></div>`).join('');
 }
 function renderProduct(){
-  const metaBits = [];
-  if(P.origin) metaBits.push(`<span>Origin <b>${P.origin}</b></span>`);
-  if(P.grade)  metaBits.push(`<span>Grade <b>${P.grade}</b></span>`);
+  const detailRows = (P.details || []).filter(r => r.value).map(r =>
+    `<div class="drow"><span class="dk">${r.label}</span><span class="dv">${r.value}</span></div>`
+  ).join('');
 
   $('grid').innerHTML = `
     <div class="card">
       <div class="shot"><img src="${P.image}" alt="${P.name}"></div>
       <div class="pbody">
-        <span class="eyebrow">${P.weight}</span>
-        <h3>${P.name}</h3>
+        <span class="eyebrow">${P.weight} of matcha</span>
+        <h3 class="hand">${P.name}</h3>
         ${P.desc ? `<p class="desc">${P.desc}</p>` : ``}
-        ${metaBits.length ? `<div class="meta">${metaBits.join('')}</div>` : ``}
+        ${detailRows ? `
+          <details class="details">
+            <summary>Details<span class="chev" aria-hidden="true">⌄</span></summary>
+            <div class="dbody">${detailRows}</div>
+          </details>` : ``}
         ${P.bestFor.length ? `<div class="tags">${P.bestFor.map(t=>`<span class="tag">${t}</span>`).join('')}</div>` : ``}
         ${Object.keys(P.flavour).length ? `<div class="flav">${flavRows(P.flavour)}</div>` : ``}
         <div class="pfoot">
@@ -515,45 +641,46 @@ function renderProduct(){
       </div>
     </div>`;
 }
-function renderAddon(){
-  $('addon-slot').innerHTML = `
-    <div class="addon" id="addon">
-      <div class="shot"><img src="${A.image}" alt="${A.name}"></div>
+function renderAddons(){
+  $('addon-slot').innerHTML = ADDONS.map(a => `
+    <div class="addon" id="addon-${a.id}">
+      <div class="shot${a.cover ? ' cover' : ''}"><img src="${a.image}" alt="${a.name}"
+        onerror="this.style.display='none';this.parentNode.classList.add('noimg');this.parentNode.setAttribute('data-label',this.alt)"></div>
       <div class="pbody">
-        <span class="badge">${A.tagline}</span>
-        <h3>${A.name}</h3>
-        ${A.desc ? `<p class="desc">${A.desc}</p>` : ``}
-        <p class="lockmsg" id="lockmsg" hidden>${A.lockMsg}</p>
+        <span class="badge">${a.tagline}</span>
+        <h3 class="hand">${a.name}</h3>
+        ${a.desc ? `<p class="desc">${a.desc}</p>` : ``}
+        <p class="lockmsg" id="lockmsg-${a.id}" hidden>${CONFIG.ADDON_LOCK_MSG}</p>
         <div class="pfoot">
-          <div class="price">${fmt(A.price)}${A.usualPrice ? `<span class="up">${fmt(A.usualPrice)}</span>` : ``}</div>
+          <div class="price">${fmt(a.price)}${a.usualPrice ? `<span class="up">${fmt(a.usualPrice)}</span>` : ``}</div>
           <div class="qgroup">
             <div class="stepper">
-              <button id="a-minus" onclick="step('${A.id}',-1)" aria-label="Remove one blind box">–</button>
-              <span class="n" id="q-${A.id}">0</span>
-              <button id="a-plus" onclick="step('${A.id}',1)" aria-label="Add one blind box">+</button>
+              <button id="a-minus-${a.id}" onclick="step('${a.id}',-1)" aria-label="Remove one ${a.name}">–</button>
+              <span class="n" id="q-${a.id}">0</span>
+              <button id="a-plus-${a.id}" onclick="step('${a.id}',1)" aria-label="Add one ${a.name}">+</button>
             </div>
-            <button class="btn btn-lilac" id="a-add" onclick="step('${A.id}',1)">Add</button>
+            <button class="btn btn-lilac" id="a-add-${a.id}" onclick="step('${a.id}',1)">Add</button>
           </div>
         </div>
       </div>
-    </div>`;
+    </div>`).join('');
 }
 
 function step(id, d){
   qty[id] = Math.max(0, qty[id] + d);
-  // the blind box can't stand alone — drop it if the tin goes to zero
-  if(id === P.id && qty[P.id] === 0) qty[A.id] = 0;
-  if(id === A.id && qty[P.id] === 0) qty[A.id] = 0;
+  // add-ons can't stand alone — if there's no tin, clear every add-on
+  if(qty[P.id] === 0) ADDONS.forEach(a => qty[a.id] = 0);
   syncUI();
 }
 function syncUI(){
   $('q-'+P.id).textContent = qty[P.id];
-  $('q-'+A.id).textContent = qty[A.id];
-
   const locked = qty[P.id] === 0;
-  $('addon').classList.toggle('locked', locked);
-  $('lockmsg').hidden = !locked;
-  ['a-minus','a-plus','a-add'].forEach(i => $(i).disabled = locked);
+  ADDONS.forEach(a => {
+    $('q-'+a.id).textContent = qty[a.id];
+    $('addon-'+a.id).classList.toggle('locked', locked);
+    $('lockmsg-'+a.id).hidden = !locked;
+    ['a-minus-','a-plus-','a-add-'].forEach(p => $(p+a.id).disabled = locked);
+  });
 
   const c = items().reduce((s,i)=>s+i.qty,0);
   if(!c){ $('cart-sum').textContent = "Nothing added"; $('to-checkout').disabled = true; }
@@ -565,7 +692,7 @@ function syncUI(){
 function items(){
   const out = [];
   if(qty[P.id] > 0) out.push({ id:P.id, name:P.name, price:P.price, qty:qty[P.id] });
-  if(qty[A.id] > 0) out.push({ id:A.id, name:A.name, price:A.price, qty:qty[A.id] });
+  ADDONS.forEach(a => { if(qty[a.id] > 0) out.push({ id:a.id, name:a.name, price:a.price, qty:qty[a.id] }); });
   return out;
 }
 function subtotal(){ return items().reduce((s,i)=>s+i.price*i.qty,0); }
@@ -713,6 +840,7 @@ async function submitOrder(){
     orderRef: ORDER_REF, items: items(),
     subtotal:+subtotal().toFixed(2), delivery: CONFIG.DELIVERY_FEE, total:+total().toFixed(2),
     customer:{name,email,phone}, address:{line:addr,postal,notes},
+    voucherCode: voucherOK ? CONFIG.VOUCHER.code : "",
     paymentProof: proofDataUrl, placedAt: new Date().toISOString()
   };
 
@@ -722,6 +850,10 @@ async function submitOrder(){
     if(!out.success) throw new Error(out.error || 'Server error');
     $('done-ref').textContent = out.orderRef || ORDER_REF;
     $('done-email').textContent = email;
+    // They entered the code but landed past the first 50.
+    if(voucherOK && out.voucherSoldOut) showVoucherSoldOut();
+    // They're in the 50 — surface the free-drink code on the done screen too.
+    if(out.redemptionCode) showRedemption(out.redemptionCode);
     location.hash = 'done';
   }catch(err){
     btn.disabled = false; btn.innerHTML = 'Place preorder';
@@ -729,9 +861,22 @@ async function submitOrder(){
   }
 }
 
+function showVoucherSoldOut(){
+  $('modal-title').textContent = "aw, just missed it";
+  $('modal-body').textContent = "The free-drink voucher's all claimed — you were just after the first " +
+    CONFIG.VOUCHER.limit + "! Your order's still confirmed and on its way. Come earlier next time 🍵";
+  $('modal-code').hidden = true;
+  $('modal').hidden = false;
+}
+function showRedemption(code){
+  $('done-redeem').hidden = false;
+  $('done-redeem-code').textContent = code;
+}
+function closeModal(){ $('modal').hidden = true; }
+
 /* ---------- init ---------- */
 fillRibbon('rib-2'); fillRibbon('rib-3');
-renderProduct(); renderAddon(); syncUI();
+renderProduct(); renderAddons(); syncUI();
 render(location.hash.slice(1) || 'landing');
 </script>
 </body>
